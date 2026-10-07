@@ -171,7 +171,7 @@ WORKOUT_TYPES = {
     6: "elliptical",
     7: "climbing",
     8: "trail_running",
-    9: "skiing",
+    9: "outdoor_cycling",
     10: "snowboarding",
     16: "freestyle",
     17: "swimming",
@@ -180,6 +180,13 @@ WORKOUT_TYPES = {
     20: "yoga",
     21: "rowing",
     22: "indoor_rowing",
+    # 52: observed 2026-10-07 on MILI_MONACO (Amazfit). Raw /v1/sport/run/history.json
+    #     record carried strength_training_group=[{"actionType":0,"count":374}],
+    #     strengthScores=[75,77,82,80,73], total_group=1 and
+    #     restTimeBetweenGroupsWithMillis=789 — all strength-only fields, no
+    #     distance/cadence/pace. So 52 is strength training, not "unknown".
+    #     64 is the other strength code seen in the wild; both are kept.
+    52: "strength_training",
     64: "strength_training",
     128: "hiit",
     223: "other",
